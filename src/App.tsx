@@ -8,6 +8,7 @@ import Dashboard from './pages/Dashboard';
 import ProjectsPage from './pages/ProjectsPage';
 import TasksPage from './pages/TasksPage';
 import TimerPage from './pages/TimerPage';
+import AnalyticsPage from './pages/AnalyticsPage';
 
 const App: React.FC = () => {
   return (
@@ -21,6 +22,7 @@ const App: React.FC = () => {
             <Route path="/proyectos" element={<ProjectsPage />} />
             <Route path="/tareas" element={<TasksPage />} />
             <Route path="/timer" element={<TimerPage />} />
+            <Route path="/analytics" element={<AnalyticsPage />} />
           </Routes>
         </Container>
       </div>

@@ -1,7 +1,13 @@
 import React from "react";
 import { Navbar, Nav, Container } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import { FaHome, FaProjectDiagram, FaTasks, FaClock } from "react-icons/fa";
+import {
+  FaHome,
+  FaProjectDiagram,
+  FaTasks,
+  FaClock,
+  FaChartBar,
+} from "react-icons/fa";
 import { IconBaseProps } from "react-icons";
 
 const Navigation: React.FC = () => {
@@ -32,6 +38,10 @@ const Navigation: React.FC = () => {
             <Nav.Link as={Link} to="/timer">
               {(FaClock as React.FC<IconBaseProps>)({ className: "me-1" })}
               Timer
+            </Nav.Link>
+            <Nav.Link as={Link} to="/analytics">
+              {(FaChartBar as React.FC<IconBaseProps>)({ className: "me-1" })}
+              Analytics
             </Nav.Link>
           </Nav>
         </Navbar.Collapse>
