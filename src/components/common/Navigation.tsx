@@ -1,13 +1,7 @@
 import React from "react";
 import { Navbar, Nav, Container } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import {
-  FaHome,
-  FaProjectDiagram,
-  FaTasks,
-  FaClock,
-  FaChartBar,
-} from "react-icons/fa";
+import { FaHome, FaProjectDiagram, FaTasks, FaClock, FaChartBar, FaCalendar } from 'react-icons/fa';
 import { IconBaseProps } from "react-icons";
 
 const Navigation: React.FC = () => {
@@ -42,6 +36,10 @@ const Navigation: React.FC = () => {
             <Nav.Link as={Link} to="/analytics">
               {(FaChartBar as React.FC<IconBaseProps>)({ className: "me-1" })}
               Analytics
+            </Nav.Link>
+            <Nav.Link as={Link} to="/calendario">
+              {(FaCalendar as React.FC<IconBaseProps>)({ className: "me-1" })}
+              Calendario
             </Nav.Link>
           </Nav>
         </Navbar.Collapse>
