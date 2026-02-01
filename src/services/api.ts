@@ -58,6 +58,12 @@ export const taskApi = {
   
   search: (nombre: string) => 
     api.get<Task[]>(`/tareas/buscar/${nombre}`),
+  
+  getSubtareas: (tareaId: number) => 
+    api.get<Task[]>(`/tareas/${tareaId}/subtareas`),
+  
+  createSubtarea: (tareaPadreId: number, subtarea: Omit<Task, 'id' | 'proyecto' | 'fechaCreacion' | 'fechaActualizacion' | 'subtareas'>) => 
+    api.post<Task>(`/tareas/${tareaPadreId}/subtareas`, subtarea),
 };
 
 // ==================== REGISTROS DE TIEMPO ====================

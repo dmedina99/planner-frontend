@@ -10,4 +10,6 @@ export interface Task {
   deadline?: string;
   fechaCreacion?: string;
   fechaActualizacion?: string;
+  subtareas?: Task[]; 
+  tareaPadre?: Task;
 }

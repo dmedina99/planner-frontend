@@ -4,6 +4,7 @@ import { FaEdit, FaTrash, FaClock } from 'react-icons/fa';
 import { IconBaseProps } from 'react-icons';
 import { Task, Project } from '../../types';
 import { taskApi, projectApi } from '../../services/api';
+import SubtaskList from './SubtaskList';
 
 interface TaskListProps {
   onEdit: (task: Task) => void;
@@ -60,7 +61,7 @@ const TaskList: React.FC<TaskListProps> = ({ onEdit }) => {
   };
 
   // Filtrar tareas
-  const filteredTasks = tasks.filter(task => {
+  const filteredTasks = tasks.filter(task => !task.tareaPadre).filter(task => {
     const projectMatch = selectedProject === 'all' || task.proyecto.id?.toString() === selectedProject;
     const estadoMatch = selectedEstado === 'all' || task.estado === selectedEstado;
     return projectMatch && estadoMatch;
@@ -199,6 +200,8 @@ const TaskList: React.FC<TaskListProps> = ({ onEdit }) => {
                     </Button>
                   </div>
                 </Card.Body>
+                {/* Subtareas */}
+                <SubtaskList task={task} onUpdate={loadData} />
               </Card>
             </Col>
           ))}
