@@ -1,31 +1,37 @@
-import React from 'react';
-import { Navbar, Nav, Container } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
-import { FaHome, FaProjectDiagram, FaTasks } from 'react-icons/fa';
-import { IconBaseProps } from 'react-icons';
+import React from "react";
+import { Navbar, Nav, Container } from "react-bootstrap";
+import { Link } from "react-router-dom";
+import { FaHome, FaProjectDiagram, FaTasks, FaClock } from "react-icons/fa";
+import { IconBaseProps } from "react-icons";
 
 const Navigation: React.FC = () => {
   return (
     <Navbar bg="primary" variant="dark" expand="lg" className="mb-3">
       <Container>
         <Navbar.Brand as={Link} to="/dashboard">
-          {(FaProjectDiagram as React.FC<IconBaseProps>)({ className: 'me-2' })}
+          {(FaProjectDiagram as React.FC<IconBaseProps>)({ className: "me-2" })}
           Task Planner
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ms-auto">
             <Nav.Link as={Link} to="/dashboard">
-              {(FaHome as React.FC<IconBaseProps>)({ className: 'me-1' })}
+              {(FaHome as React.FC<IconBaseProps>)({ className: "me-1" })}
               Dashboard
             </Nav.Link>
             <Nav.Link as={Link} to="/proyectos">
-              {(FaProjectDiagram as React.FC<IconBaseProps>)({ className: 'me-1' })}
+              {(FaProjectDiagram as React.FC<IconBaseProps>)({
+                className: "me-1",
+              })}
               Proyectos
             </Nav.Link>
             <Nav.Link as={Link} to="/tareas">
-              {(FaTasks as React.FC<IconBaseProps>)({ className: 'me-1' })}
+              {(FaTasks as React.FC<IconBaseProps>)({ className: "me-1" })}
               Tareas
+            </Nav.Link>
+            <Nav.Link as={Link} to="/timer">
+              {(FaClock as React.FC<IconBaseProps>)({ className: "me-1" })}
+              Timer
             </Nav.Link>
           </Nav>
         </Navbar.Collapse>
